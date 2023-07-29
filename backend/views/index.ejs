@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="todo" placeholder="enter task here">
+        <button type="submit">Add tasks</button>
+    </form>
+    <div>
+        <ul>
+            <% data.map((task)=>{ %>
+                <li><%= task.todo %> &nbsp; <%= task._id %>
+                <form action="/<%= task._id %>" method="post"> 
+                <button>Delete</button> </form> </li>
+
+           <%  }) %>
+        </ul>
+    </div>
+</body>
+</html>
